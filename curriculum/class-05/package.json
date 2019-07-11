@@ -1,0 +1,11 @@
+{
+  "name": "class-05",
+  "version": "1.0.0",
+  "description": "## Learning Objectives * Understand the differences between SQL and noSQL Databases * Understand the MongoDB Ecosystem * Modeling Data / Schemas * Lifecyle Hooks * Be able to use various MongoDB Clients   * mongo cli   * compass * Remote Mongo   * mLab   * Atlas   * Dynamo (AWS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
