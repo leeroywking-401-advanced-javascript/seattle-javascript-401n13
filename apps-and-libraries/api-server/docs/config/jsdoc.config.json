@@ -1,7 +1,6 @@
 {
   "source": {
-    "include" : ["./"],
-    "exclude" : ["./node_modules"]
+    "include" : ["./src"]
   },
   "opts": {
     "destination": "./docs/",
