@@ -1,5 +1,30 @@
 # Mid-Term Projects
 
+## Teams
+
+### George
+- Pratibh
+- Guru
+- Anthony
+
+### Jerry
+- AJ
+- Adrienne
+- Jeremy
+- Brad
+
+### Kramer
+- Adriana
+- Liz
+- Brandyn
+- Lee
+
+### Elaine
+- Aileen
+- Jonny
+- Austin
+- Joe
+
 ## Core Requirements
 
 * Use any, all, most, or none of what you learned ... 
@@ -19,7 +44,6 @@
 * Socket.io
 * ... or teach yourself something totally new this week!
  
-
 
 ## Workflow
 
@@ -49,7 +73,7 @@
 
 ## Development Schedule
 
-#### Class 20 (Project Planning)
+#### 1st Monday
   * Create your github organization
     * Back-End Repo
     * Front-End Repo
@@ -61,29 +85,39 @@
     * At this stage, its's probably just stories to write more stories...
   * Get your Wiki setup for documentation
   
-#### Class 21 (Project Start)
+#### 1st Tuesday
   * Wireframes Complete
   * User workflows finalized
   * Initial design planned
+  * DEPLOYMENT PIPELINE Proof of Life
   * Code
   
-#### Class 22 (Core MVP)
+#### 1st Wednesday
+  * DEPLOYMENT PIPELINE Solidified and tested
+  * Code
+  
+#### 1st Thursday
   * First MVP should be completed by EOD
   * Your core functionality should be working end to end.
     * Databases Hooked up and saving
     * User workflow works (navigation, actions)
     
-#### Class 23 (Final MVP)
+#### Saturday
+  * Regroup
+  * Recap
+  * Re-Assess
+    
+#### 2nd Monday
   * Adding Non-Breaking Features 
   * Final "MVP" should be complete
     * Whatever you have by EOD should be presentation ready
-    * Anything you add from this point on is purely additive.
-  
-#### Class 24
+    * Anything you add from this point on is purely additive. 
+     
+#### 2nd Thursday
   * Final Polish
   * Presentation Practice
   
-#### Class 25 (Presentation Day)
+#### Presentation Day
   * Eat.
   * Drink.
   * Present.
