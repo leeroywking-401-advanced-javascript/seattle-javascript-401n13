@@ -1,0 +1,34 @@
+.clicker{
+  width: 4em;
+}
+#main{
+  line-height: 4em;
+  font-size: 2em;
+  padding: 1em;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+
+button{
+  font-size:1em;
+}
+
+
+#counter{
+  width: 1em;
+}
+
+
+#footer{
+  font-size:2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
