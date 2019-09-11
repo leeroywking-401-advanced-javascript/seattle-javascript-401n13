@@ -1,23 +1,9 @@
 # LAB - Routing and Component Composition
 
+Implement routing and composed components into the To Do Application.
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize the Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
-**Break Down the Assignment**
-
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
-
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
-
-**Map your priorities and dependencies before jumping into the code.**
-
----
 
 ## Getting Started
 
@@ -27,47 +13,67 @@ Once you have a good visual and mental model of how the application works, break
 
 * Wrap your `<App />` component in `<BrowserRouter />` context at the index level
 * Implement a simple navigation bar that links to Home and Code
-* `/` should render "Hello World" or anything else you choose
-* `/code` should render the output of the assignments below ...
+* `/` should render your app/assignment or primary output
+* `/about` should render a static "About Us" page of content
 
 
 ## Practice Component Composition
-### Assignment 1 - Warmups
-* Fork the [Starter Code Sandbox](https://codesandbox.io/s/2zpknvmk0n)
-* Create a new component called "Story"
-* Render this component from the App component with markup/content inside of the `<div>`
-* Create a new component called "Details"
-* Have `<Story>` render `<Details>` with the `<span>` tags nested within it
-* Refactor to have the `<Details>` component render the div and then the `<span>` tags using the children property
+### Cards and Decks
+Begin with: `starter-code/practice`
 
-### Assignment 2  - Modularize and Functionalize
-* Fork your completed sandbox
-* Refactor your work using new modules/files for each component
-* Be prepared to discuss/defend file & directory structures chosen
-  * Do this will class based components
-  * Repeat the process with functional components in different files
-    * `<FunctionalStory />` and `<FunctionalDetails />`
-  * Your output should repeat, once with each component set
+You are starting with a monolithic application that reads in a `.json` file containing an array of content sections (decks), each of which contains multiple content records (cards)
 
-### Assignment 3  - Modal
-* Fork the [star wars fetcher sandbox](https://codesandbox.io/s/1o64l8pqm4)
-* Create a new component (in its own folder) called `Modal`
-* Replace the `<h3>` tag that shows the person with a `<Modal>` with the `<h3>` inside it
-* Code out the modal component with the following features:
-  * When active, it should render it's `{props.children}`
-  * It should draw itself with a close icon/link
-  * It should be able to close (i.e. not render)
+The application renders this content by mapping over the content such that each deck is a `<section>` and then each card within is a `<div>`
 
+Refactor this application as follows
+
+* Create separate components for `<Page />`, `<Deck />` and `<Card />`
+* Render the page by sending it the content object as a property
+* Have the page render a `<Deck />` for each content section.
+* Have the `<Deck />` render each of their content records as a `<Card />`
+* Use component composition to pre-render the cards and have the decks render them as `props.children` 
+* Use the `<If />` component library to conditionally render the content in both the decks and cards
+  * e.g. only render the `<header>` if you have a title.
 
 ### Testing
 * Complete basic render testing on these components
-* Complete logical and render testing on the if components
+* Account for missing/incomplete content
 
-### Stretch Goals
-* Create an NPM account and an organization
-* Publish your `<If />` and `<Modal />` components to NPM
+## To Do Application Refactor
+
+Begin with: `starter-code/todo`
+
+Again, your starter code for this assignment is a bare-bones HTML, CSS, Vanilla JS to do application.
+
+You will first need to convert this application to React and then **add the following features**, using composition and conditional rendering.
+
+* Change the "Add" form to use more fields and store this with each record
+  * Assigned To (a name)
+  * Difficulty (range from 1-5)
+  * Due Date (use a calendar)
+* Populate the initial To Do list from an API server
+* Add a `Details` button next to the `Delete` button
+  * When clicked, show a modal or slide-in with the details of the item
+  
+Style the application as you please. Be creative!
+  
+### Testing
+* Complete basic render testing on the application
+* Test state changes 
+* Modal visibility on state change 
+  * Is it rendered?
+  * Is the correct to do item in it?
+ 
+### To Do App Stretch Goals
+* Save the server (`post`) when an item is added
+* Delete from the server when the `Delete` button is clicked
+
+### Additional Stretch Goals
+* Create an `npm` account and an organization
+* Write tests for an publish your `<If />` components to `npm`
 * Now, you can use them in any project.
-  * Make them great!
 
 ### Assignemnt Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations
+
+

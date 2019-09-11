@@ -1,16 +1,15 @@
-# Javascript Frameworks
+# Gatsby and Next
 
 ## Learning Objectives
 
-* Live in a world where Express and React aren't the only players...
-* Have a basic understanding of how other frameworks are installed and implemented
-* Have a basis to compare and contrast these and others that may be encountered.
+* Describe and Define
+  * Server-Side Rendering and SEO
+  * The Gatsby Ecosystem
+  * The Next.js Ecosystem
+* Execute
+  * Build a simple Blog site with Gatsby
+  * Build a simple Blog site with Next.js
+  
 
-## Computer Science Concept:
-* Apache
-* NGINX
-* mySQL
 
-## Main Topic:
-**[TODO MVC](http://todomvc.com/)**
 

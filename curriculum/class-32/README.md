@@ -2,10 +2,12 @@
 
 ## Learning Objectives
 
-* Create and deploy a Socket.io server
-* Create and deploy a Socket.io client
-* Wire up events and listeners (Pub/Sub) on both ends
-* Connect a react application to a realtime server using socket.io
+* Understand, Use, Create Custom React Hooks
+  * Form State
+  * Realtime Connections
+  * `useEffect()` usage with connections
+* Connect to a socket.io server
+* Connect to a Q/message server
 * Subscribe to remote events
 * Emit events and data back to the server
 
@@ -19,7 +21,16 @@
 * Break
 * :60 **Main Topic**
 
-## Main Topic: Socket.io
+## Main Topic: 
+
+### Custom Hooks
+* Use the `useXxxx()` naming convention
+* Manage their own state internally
+* Export data, methods, or both
+* Have access to the react cycle
+* Used in functional components
+
+### Socket.io
 * What is Socket.io?
   * Keeps a pipe open between client and server
   * Keeps communication pathway open

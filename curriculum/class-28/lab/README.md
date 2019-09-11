@@ -1,24 +1,9 @@
 # LAB - Props and State
 
+This lab is an opportunity to practice passing props and state between components. Its also the first refactoring of a "To Do List" application.
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize the Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
-**Break Down the Assignment**
-
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
-
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
-
-**Map your priorities and dependencies before jumping into the code.**
-
----
-
 ## Getting Started
 
 Starter code has been provided for you in the `/lab/starter-code` folder. There are 3 separate assignments, each with it's own folder.
@@ -27,98 +12,67 @@ Open [Code Sandbox](http://codesandbox.io) and Create a new application. When pr
 
 You will be submitting the URL to this working sandbox as part of your assignment.
 
-## Requirements
+## Practice Assignments
 
-### Assignment 1 - Props Practice
-Begin with: `/lab/starter-code/props`
+**Pass down some text**
 
-**Challenge Instructions (Part 1)**
+Begin with: `/lab/starter-code/practice`
 
-* Complete all tasks in this same index.js file
-* Complete the challenge below and submit the URL to your fork
-* Create a new component called "Message"
-* Render the Message component
-* In this componenet, create a state property named "text"
-* Set it's value to "Hello World"
-* The Message component should render a "div" displaying the contents of the text property from this component's state
+* Create a new component called `<Message />` under `components/message.js`
+* Import this into your `<App />` and render the Message component with an attribute called `text`, with the value "This is my amazing application"
+* In the Message component, create a state property named `words`
+* Set it's value to "These words belong to the message component"
+* The Message component should render an `<h2>` displaying the value of the text property sent to it from the App component
+* The Message component should render an `<h3>` displaying the value of the words property from it's internal state
 
-**Challenge Instructions (Part 2)**
+**Pass through some text to a sub-sub component**
 
-* Fork your completed sandbox
-* Refactor your work using new modules for each component
-* Be prepared to discuss/defend file & directory structures chosen
+* In the `<App />` component, send an additional attribute to the `<Message />` component called "title", with the value "This is my title"
+* Create a new component called `<Title />` in `title.js`
+* Import this component into the `<Message />` component
+* In the `<Message />` component, render the `<Title />` component above the `<h2>` and `<h3>` tabs you already have, setting an attribute named "text" with the value being the "title" property sent in from the `<App />`
+* In the `<Title />` component, render an `<h1>` tag with the value of the "text" property sent in from the `<Message />` component
 
-**Stretch Goals / Further Practice**
+**Pass a method to work with external state**
 
-* Send multiple properties to the message component
-* Create a 3rd component and have the message property render that one, with some props (maybe even the ones that it received)
-* Create a 4th component and send props there as well
+* In the `<App />` component, create a state object in the constructor with a property called `input`
+* In the `<App />` component, write a method called `sayIt()` that will take a string, and set the state property called `input` with that string.
+* In the `<App />` component, send an additional attribute to the `<Message />` component called `action`, which sends a reference to the `sayIt` method.
+* In the `<App />` component, send an additional attribute to the `<Message />` component called `input`, which sends `this.state.input`
+* Create a new component called `<Form />` in `form.js`
+* Import this component into the `<Message />` component
+* Render this from `<Message />` with an attribute called `do` that is a reference to the `action` property sent to the `<Message />` component from the `<App /`
+  * Note that what we've done here is to create a method in `<App />`, sent it to `<Message />` and then passed it along to `<Form />`
+* In the `<Form />` component, render a `<form>` tag with an `<input>` element.
+* The `<form>` should call a method `onSubmit` that will prevent the default behavior on the form.
+* The `<input>` element should call a method `onChange` that will capture current value of the input field and then call the method sent in the `do` property with that value
+  * This will bubble all the way up and run the `sayIt()` method in the `<App />`
+* In the `<Message />` component, render an `<h4>` tag at the end, containing the value of the `input` property sent to it from `<App />`
 
+When operational, your application should look like the image below, and the words you type should appear as you type them.
 
-### Assignment 2 - Internal State Practice
+![Screen Shot](./lab28-practice.png)
 
-Begin with: `/lab/starter-code/internal-state`
+---
 
-**Challenge Instructions (Part 1)**
+## To Do Application Refactor
 
-* Leave these instructions in place
-* Fork this sandbox
-* Complete all tasks in this same index.js file
-* Complete the challenge below and submit the URL to your fork
-* Add a constructor and declare a state object
-* "state" should have "count" and "name" properties
-* Add a form with a single field
-* As the user types in the field, change the "name" property in state and update the display
-* When the user "submits" the form, increase the counter by 1 and update the display
-* The output section below should update as state changes
+Begin with: `/lab/starter-code/todo`
 
-**Challenge Instructions (Part 2)**
+You will be refactoring this simple "To Do" application, written with HTML, CSS, Vanilla Javascript and Handlebars Templates in a React app.
 
-* Fork your completed sandbox
-* Refactor your work using new modules for each component
-* Be prepared to discuss/defend file & directory structures chosen
+* Create a new React application at [Code Sandbox](http://codesandbox.io)
+* Replicate the functionality of the starter application
+  * Add whatever is typed into the form to the list
+  * Clicking an item changes it's 'complete' state
+    * Use that to set a new class on the item for styling
+  * Clicking the delete link removes the item from the list
+* Some basic CSS has been provided in the starter code
+  * Convert this to SASS
 
-**Stretch Goals / Further Practice**
+## Tests
 
-* Instead of updating the count on submit, create a link that updates the count on demand
-* Use multiple fields in your form to update multiple state properties
-* Make evaluations on the state of your state to dynamically render things. For example, if the name is empty, show an error or if there are 2 names given (first and last), reverse and comma separate them.
-
-### Assignment 3 - External State Practice
-
-Begin with: `/lab/starter-code/external-state`
-
-**Challenge Instructions (Part 1)**
-
-* Leave these instructions in place
-* Fork this sandbox
-* Complete the challenge below and submit the URL to your fork
-* Add a constructor and declare a state object
-* "state" should have "count" and "name" properties
-* Create a "handler" method that will take name as a parameter and updates the state with the given name and an increased count
-* Import a new "Form" component (created in the steps below later)
-* Render the "Form" component with a reference to the update method created above, via property
-* Create a new "Form" Component
-* Add a form element with a single field
-* As the user types in the field, change the "name" property in state
-* When the user "submits" the form invoke handler method in the parent component, sending the updated name
-* The output section below should update as state changes
-
-**Challenge Instructions (Part 2)**
-
-* Fork your completed sandbox
-* Refactor your work using new modules for each component
-* Be prepared to discuss/defend file & directory structures chosen
-
-**Stretch Goals / Further Practice**
-
-* Instead of updating the count on submit, create a link that updates the count on demand
-* Use multiple fields in your form to update multiple state properties
-* Make evaluations on the state of your state to dynamically render things. For example, if the name is empty, show an error or if there are 2 names given (first and last), reverse and comma separate them.
-
-### Tests
-
-Write mount/enzyme tests for each component/assignment
+Write mount/enzyme tests for each component in all assignments
 
 ## Assignment Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations

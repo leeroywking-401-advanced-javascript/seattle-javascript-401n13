@@ -1,74 +1,52 @@
-# Block 8 Project: RESTy Conversion to Redux
+# Block 8 Project: To Done
 
-Its upgrade time! We're going to migrate our venerable **RESTy** application from using a simplistic (and slightly monolithic) state management system into a more modern and robust **Redux** core.
-
-**This is a paired assignment**
-
+Create and Deploy the full To Do Application
 
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
 
-**Visualize the Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
-**Break Down the Assignment**
-
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
-
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
-
-**Map your priorities and dependencies before jumping into the code.**
-
----
 
 ## Getting Started
 
-For this assignment, you'll be running in an "ejected" React application, where we get out from under the "Create React App" environment and into a more tactical one, using a generated "webpack" ... 
-
-**Do not modify any of the configuration files that are created by the steps below, or bring in any custom configs**
-
-* Create a new repository for this assignment and clone it
-* In that folder, unzip the provided starter code
-* Run `npm install` followed by `npm start` to get the app running
-* Once you confirm that it's working, stop the app
-* "Eject" from `create-react-app`
-  * `npm run eject`
-* Start your server again
-  * `npm start`
-
+For this assignment, you'll be running custom configured React application, where we get out from under the "Create React App" environment and into a more tactical one, using a hand crafted "webpack" ... 
 
 ## Requirements
-* Keeping the core functionality in place, upgrade RESTy
-  * Convert from component state to a Redux Store
-  * Convert from using `superagent` to `fetch`
-  * Modularize the component and store tree
-  * Fully document the application and all components
-  * Fully test the reducers, actions, and units
-  
-* Use the tools you've built in react to construct an amazing application.
-* Make this easy and intuitive for a user to use
-* The User Interface and Experience are completely up to you
-  
 
-**Implementation Notes/Advice**
-* Use the deployed API server at https://api-401js.herokuapp.com
-* The API server has `players` and `teams` models
-* The api server supports the following routes:
-  * **GET** `/api/v1/models` - A list of all data models
-  * **GET** `/api/v1/:model/schema` - The JSON Schema for a given **model**
-  * **GET** `/api/v1/:model/id` - A single record, from a **model**, with the **id**
-  * **DELETE** `/api/v1/:model/id` - Delete a single record, from a **model**, with the **id**
-  * **PUT** `/api/v1/:model/id` - Replace single record, from a **model**, with the **id**
-  * **PATCH** `/api/v1/:model/id` - Tactically update a single record, from a **model**, with the **id**
+Create a fully functional To Do Application / Website with the following features:
+* Minimum 3 Pages
+  * Home Page describing the application
+  * Login Page
+  * To Do App Page
+* Professional and well thought out styling
+* Use the `<Login />` and `<Auth />` components to control access to the "To Do" page
+  * Login Required to see anything
+  * Only users with "delete" permissions can see the trash can
+  * Only users with "delete" permissions can actually delete items
+  * Only users with "create" permissions can add items
+  * Only users with "update" permissions can toggle items as complete
+* Use The Context API to set application settings/options
+  * i.e. How many items to show per screen.
+* All CRUD operations must be connected to a live API
+  * Use your discretion on the Add Item Form
+    * Hand Spun, with `useForm()` for state
+    * JSON Schema Form
+    * Redux Form
+* Use the `useQ()` hook to subscribe to the Q server along with your API
+  * Subscribe to the "create", "update", and "delete" events
+  * When those events are received, dispatch the appropriate action to refresh your store.
+* Clicking a To Do Item should toggle it's complete status between `true` and `false`
+* Dragging a To Do Item to an on screen trash can icon should delete it
+* Clicking a 'details' link for a To Do item should open up it's full details in the manner of your choosing
+  * Modal Pop-Up
+  * Slide-In Drawer
+  * Come up with your own
 
+## Stretch Goal
 
-## Stretch Goals
-
-* Implement a Database Monitor with "Q" Events
-* Implement a CRUD/CMS editor for supported API models, from a supported server
+* Provide a means of updating an existing item.
+* Click a link to expose a form with the item's details
+* Perform a PUT on the server
+* Update local state/store properly
 
 ## Assignment Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations

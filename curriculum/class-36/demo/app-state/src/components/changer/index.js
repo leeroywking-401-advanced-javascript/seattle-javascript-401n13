@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../store/person-actions.js';
+// import * as actions from '../../store/person-actions.js';
+import {actions} from '../../store/person.store.js';
 
 import styles from './app.module.scss';
+
+console.log(actions);
 
 class Changer extends React.Component {
   render() {

@@ -1,13 +1,13 @@
 export const changeName = payload => {
   return {
     type: 'CHANGE',
-    payload: payload
-  }
-}
+    payload: payload,
+  };
+};
 
 export const resetName = payload => {
   return {
     type: 'RESET',
-    payload: payload
-  }
-}
+    payload: payload,
+  };
+};

@@ -1,49 +1,57 @@
-# LAB - Remote CRUD
+# LAB - Combined Reducers, Drag and Dro
 
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
 
-**Visualize the Application**
+## Practice - Drag and Drop
 
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
+Create a reusable Drag and Drop component system with the API described below. Ideally, this would be generic enough for you put on NPm and could be used in any application that you write in the future.
 
-**Break Down the Assignment**
+The starter code provided is optimistic -- it is wired up to use your components as shown below, and should work once you've gotten your work completed.
 
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
+`<Draggable>` Wrapper around components you want to be able to drag
 
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
+* `payload` property contains data to pass to the drop zone when this is dropped.
+* `dragClass` property contains the name of the class to be applied while the element is being dragged.
+```
+<Draggable dragClass="moving" payload={someDataYouCareAbout}>
+  <MyComponent>...</MyComponent>
+</Draggable>
+```
 
-**Map your priorities and dependencies before jumping into the code.**
+`<Dropzone>` Wrapper around components you want to be able to drop things on
 
----
+* `onDrop` is the method/function you want to run after a drop happens. This will receive the payload sent by both the drop zone and the draggable element
+* `payload` property contains data about this drop zone to pass to the onDrop method after something has been dropped.
+* `className` is the name of a CSS Class that will be applied to the DropZone itself
+* `hoverClass` is the name of a CSS Class that will be applied while the drop zone is being hovered over.
 
-## Getting Started
-Starter code has been provided for you in the `/lab/starter-code` folder. 
+```
+const someDataAboutMe = {
+    categoryName: 'foobar'
+}
 
-Open [Code Sandbox](http://codesandbox.io) and Create a new application. When prompted, choose "From GitHub" and then paste in the URL to today's starter code folder from your fork of the class repository.
+const myDropHandler = (targetPayload, droppedPayload) => {
+}
 
-You will be submitting the URL to this working sandbox as part of your assignment.
+<DropZone 
+  className="container" 
+  hoverClass="dropable" 
+  payload={someDataAboutMe}
+  handleDrop={myDropHandler} 
+  hoverClass="hovering"
+>
+  <MyContainerThing>...</MyContainerThing>
+</Draggable>
+```
 
-Fire up your API Server locally or connect your app to our remote API
-* https://api-js401.herokuapp.com
 
-## Assignment
-Conver the forms lab into using remote APIs to source the schema and save the record data
+## Assignment - To Do
 
 ### Requirements
-* Remove the code that requires the `.json` file in  your react app for the schema and adds it to state
-* Pull the schema from the remote server via the resource path `/api/v1/players/schema` (or whichever model you choose)
-* On your first pull from the server of the database records, save them in the store for faster retrieval
-* Instead of saving straight to the Redux Store, use an async action creator function to send data to the server (using post or put) and then update the local store
-* When rendering the forms and lists, use the store as a cache, and update it after you save to the server.
 
 ### Testing
 * tests that ensure the list module functions correctly with error-check parameters
 
-### Stretch Goals:
-* Style it!
-
-### Assignemnt Submission Instructions
+## Assignemnt Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations

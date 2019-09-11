@@ -1,4 +1,4 @@
-# Reading: UI Frameworks
+# Reading: Next and Gatsby
 
 Below is a collection of resources of varying types and lengths which describe the topics for the upcoming lecture.  As you go through the readings each day, you'll find that certain sources work better for your reading and learning style. Focus on those, but also branch out and consume the material in different forms.
 
@@ -9,17 +9,16 @@ Wiki Entry Ideas:
 * Dictionary / Flash Cards
 * Notes in outline form
 
+## Read
+* [CRA vs Gatsby vs Next](* [CRA vs Gatsby vs Next](https://coffeencoding.com/cra-vs-next-js-vs-gatsby/)
+* [Gatsby vs Next](https://blog.jakoblind.no/gatsby-vs-next/)
+
+## Tutorials
+* [Learn Next.js](https://nextjs.org/learn/basics/getting-started)
+* [Gatsby Tutorial](https://www.gatsbyjs.org/tutorial/)
+
 ## Bookmark
-* [todo mvc](http://todomvc.com)
+[Next.js Docs](https://nextjs.org/docs)
+[Gatsby.js Docs](https://www.gatsbyjs.org/docs/)
 
-* [top 10 javascript frameworks](https://geekflare.com/best-javascript-frameworks/)
-* [top 10 php frameworks](https://stackify.com/php-frameworks-development/)
 
-* [wordpress](https://wordpress.org/)
-* [angular](https://angular.io/)
-* [vue](https://vuejs.org/)
-
-* [backbone](http://backbonejs.org/)
-* [ember](https://www.emberjs.com/)
-* [knockout](https://knockoutjs.com/)
-* [laravel (php)](https://stackify.com/php-frameworks-development/#post-21345-_1wuafqadv8v)

@@ -1,4 +1,4 @@
-https://github.com/reduxjs/redux-thunk
+// Official THUNK: https://github.com/reduxjs/redux-thunk
 
 // Ours /
 export default store => next => action =>

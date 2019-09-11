@@ -4,7 +4,7 @@ import Head from '../components/head'
 import Nav from '../components/nav'
 
 const Home = () => (
-  
+
   <>
     <Head title="Home" />
     <Nav />
@@ -13,7 +13,7 @@ const Home = () => (
         Home Page!
     </div>
   </>
-  
+
 )
 
 export default Home;

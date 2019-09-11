@@ -1,23 +1,9 @@
 # LAB - Dynamic Forms
 
+Wire dynamic forms into your To Do application, replacing standard state and/or a Form Hook.
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize the Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
-**Break Down the Assignment**
-
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
-
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
-
-**Map your priorities and dependencies before jumping into the code.**
-
----
 
 ## Getting Started
 
@@ -27,47 +13,57 @@ Open [Code Sandbox](http://codesandbox.io) and Create a new application. When pr
 
 You will be submitting the URL to this working sandbox as part of your assignment.
 
-**Fire up your API Server!**
+## Practice - Wire up forms
+You have been provided, in the `starter-code/practice` folder, a working application using standard React forms with some hooks that deal with the form submission
 
-  * Get your latest and greatest API server from the your earlier labs and get it running along with a MongoDB instance. (Recommended)
-  * Or ... use the supplied server in this lab folder
-  * Or ... simply connect to the deployed public API server
-    * [https://api-js401.herokuapp.com/api/v1/](https://api-js401.herokuapp.com/api/v1/)...
-* Once you have it up and running, fetch the schema for any model that you have. We will be using this to build our forms. Copy the schema response that you get from the server and paste it into a file called "schema.json", we'll be using that later.
-  * *The public API supports "players" and "teams" models for all operations*
+**Task 1: Refactor to use Redux Forms**
+* Copy the `player-form.js` into a new file called `player-redux-form.js` 
+* Alter the `player.js` file to import this file as a new component called `PlayerFormRedux`
+* Render the PlayerFormRedux component in addition to the `PlayerForm`
+* Don't forget to wire `redux-form` into your store
 
-## Assignments
-### Implement the RESTful Reducers
+**Task 2: Refactor to use JSON Schema Form**
+* Copy the `player-form.js` into a new file called `player-json-form.js` 
+* Alter the `player.js` file to import this file as a new component called `PlayerFormJSON`
+* Render the PlayerFormJSON component in addition to the other 2
+  * Don't forget to import the schema.json file
+  
+**How do you know when you're done?**
 
-* Use a static .json file to bring in the players schema (you can simply import it)
-* Implement all of the restful methods in the Redux Store for the player schema
-  * GET - Retrieve one item
-  * POST - Create New Item
-  * PUT - Replace an item
-  * PATCH - Update an item
-  * DELETE - Remove an item
-* Display a list of every element in the store, updating the list with every action taken on individual items.
+Your application should show 3 player forms below the list of players. You should be able to click the edit button and see a player in each of the forms. Editing and saving one should reflect in all 3 if you have this all wired up correctly.
+  
+**Stretch Goal**
+* Copy the player form again
+* Find an alternative react/redux form library
+* Wire it up
 
-### Create a generic `<Record/>` component
-In the first phase, you created a form that can edit a single model. In this phase, you will be genericizing that component.
-
-* Rename your editor component to `<Record />`
-* It should dynamically load the correct schema json file based on a prop on the component given by the container component.
-* Based on the schema
-  * Draw the correct form
-  * Connect to the right part of the store.
-  * Ensure that the record list is from the right part of state
-  * Ensure that your REST actions are using the right part of state
+For the README on this practice assignment, provide a report detailing the pros, cons, gotchas, other comparisons along with your general and implementation details for each approach.
 
 
-### Turn it on!
-* Instead of importing .json files, connect the `<Record />` component to an API server to fetch the actual Schema from the API
-* This should be optional. Use a flag of some kind to tell your component to read from a local .json file or connect to a server.
-* Use a variable to identify the API server so that your application is deployable.
+## To Do App Assignment
+**Refactor the To Do application to use Redux and a form library**
 
-###### Testing
-* Test the reducers to make sure that each action is properly manipulating state
-* Test the form behavior to ensure that added items are showing in the list, updates are showing real time changes, etc.
+You'll be given a working To Do application which you must refactor as follows:
+ 
+**State Management**
+* Convert the state management to a Redux Store.
+* Create a Redux Store, a To Do store/reducer/action set
+* Wire up the components to subscribe to the store for state and actions
 
+**Form Handling** 
+
+Convert ths current form rendering/submission process into one of either
+
+* React JSON Schema Form
+* Redux Form
+* A form library of your own choosing
+
+
+> If you choose to use JSON Schema Form, begin by replacing the schema.json file with one suitable for the to do application
+
+> This will come from the `/api/vi/todo/schema` route in either your deployed API or the official one.
+
+
+  
 ### Assignemnt Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations

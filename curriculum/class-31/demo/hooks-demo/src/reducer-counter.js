@@ -1,5 +1,5 @@
 import React from 'react';
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 
 const initialState = { count: 0 };
 
@@ -16,6 +16,11 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect( () => {
+    document.title = `Reducers! ${state.count}`;
+  });
+
   return (
     <div>
       <h2>Reducer Based Count: {state.count}</h2>

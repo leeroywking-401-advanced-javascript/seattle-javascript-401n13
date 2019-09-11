@@ -53,40 +53,6 @@ Returns a getter and setter for your state value
  export default Counter;
 ```
 
-`useContext()` 
-
-Returns and provides access to whatever your context provider exports
-
-In this example, our context provider gives us a `title` property and a `changeTitleTo()` method that we can call. This is much easier than referencing the context variable inline as you normally would.
-
-Note -- the context API is still critically important even with this hook available. Not every React shop is using hooks, so know both ways.
-
-```javascript
-import React from 'react';
-import faker from 'faker';
-import { useContext } from 'react';
-import { SettingsContext } from './settings/context';
-
-function Counter() {
-  const context = useContext(SettingsContext);
-
-  return (
-    <div>
-      <h2>{context.title}</h2>
-      <button
-        type="button"
-        onClick={() => context.changeTitleTo(faker.company.companyName())}
-      >
-        Change Title
-      </button>
-    </div>
-  );
-}
-
-export default Counter;
-
-```
-
 `useReducer()` 
 
 An alternative to useState. Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method. (If you’re familiar with Redux, you already know how this works.)

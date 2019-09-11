@@ -1,13 +1,9 @@
 # LAB - React Native - Milestone 2: Polish and Delivery
 
+Continue to work on your phone application. Deploy to either Google Play or the Apple App Store.
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize Your Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
----
 
 ## Assignment Recap
 Create your first Phone App. What it does and how it looks is up to you. 
@@ -37,6 +33,6 @@ As you complete your RNA, switch your focus to the user experience.
 
 ###  Delivery
 
-In addition to the End User documentation noted in the app requirements, you will be presenting your application live to the class
+In addition to the End User documentation noted in the app requirements, you will be presenting your application live to the class.
 
 Prepare a good working demo, be ready to jump into code sample and answer questions related to "How the heck did you do that??"

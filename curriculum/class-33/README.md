@@ -3,6 +3,7 @@
 ## Learning Objectives
 
 * Use the React Context API to tactically manage global state.
+* Implement context in class and functional components
 
 ## Outline
 * :05 **Housekeeping/Recap**
@@ -62,7 +63,12 @@ At the app level ...
 </SettingsContext>
 ``` 
 
-At the lower levels any component can "opt-in" and become a "consumer" and receive state and potentially methods through it.  Note the wrapping of context in a component, and the requirement of using a function to "get" the context object itself, which is `this.state` from the provider component.
+At the lower levels any component can "opt-in" and become a "consumer" and receive `this.state` from context.
+
+#### In a class style component, you can attach to context in 2 ways:
+ 
+ Wrap your component with, and use a function to "get" the context object itself, which is `this.state` from the provider component.
+
 ```
 <SettingsContext.Consumer>
   {context => {
@@ -79,4 +85,61 @@ At the lower levels any component can "opt-in" and become a "consumer" and recei
 </SettingsContext.Consumer>
 ```
 
+Statically declare a connection to the context provider and then use `this.context` to connect to state from the context provider
+
+```
+import {SettingsContext} from '../settings/context.js';
+
+class MyComponent extends React.Component {
+
+  static contextType = SettingsContext;
+  
+  render() {
+    return (
+      <div>
+        <h1>{this.context.title}</h1>
+        <button onClick={() => this.context.changeTitleTo('Your Website')}>
+          Change Title
+        </button>
+      </div>
+    );
+  )
+  
+}
+```
+
+
+In a functional component, you can use the `useContext()` hook to tap right in.
+
+Returns and provides access to whatever your context provider exports
+
+In this example, our context provider gives us a `title` property and a `changeTitleTo()` method that we can call. This is much easier than referencing the context variable inline as you normally would.
+
+Note -- the context API is still critically important even with this hook available. Not every React shop is using hooks, so know both ways.
+
+```javascript
+import React from 'react';
+import faker from 'faker';
+import { useContext } from 'react';
+import { SettingsContext } from './settings/context';
+
+function Counter() {
+  const context = useContext(SettingsContext);
+
+  return (
+    <div>
+      <h2>{context.title}</h2>
+      <button
+        type="button"
+        onClick={() => context.changeTitleTo(faker.company.companyName())}
+      >
+        Change Title
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+```
 

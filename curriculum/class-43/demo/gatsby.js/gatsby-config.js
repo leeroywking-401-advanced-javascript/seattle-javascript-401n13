@@ -5,7 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,6 +22,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

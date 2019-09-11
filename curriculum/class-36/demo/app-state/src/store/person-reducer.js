@@ -1,6 +1,6 @@
 let initialState = { name: 'Sam Sample' };
 
-export default ( state=initialState, action ) => {
+export default ( state = initialState, action ) => {
 
   /*
     {
@@ -13,8 +13,8 @@ export default ( state=initialState, action ) => {
 
   switch(type) {
     case 'CHANGE':
-    console.log(payload);
-      return { name: Math.floor(Math.random() * payload)+1 };
+      console.log(payload);
+      return { name: Math.floor(Math.random() * payload) + 1 };
 
     case 'RESET':
       return initialState;

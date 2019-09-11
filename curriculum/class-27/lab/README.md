@@ -1,23 +1,9 @@
 # LAB - React Testing and Deployment
 
+Write Unit and Acceptance tests for your Counter application; Deploy to the cloud
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize the Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
-**Break Down the Assignment**
-
-Once you have a good visual and mental model of how the application works, break down the requirements. For each requirement, ask your self the following questions:
-
-* Where should this new code live in the codebase?
-* What existing code needs to be modified?
-* What dependencies will I need to install?
-
-**Map your priorities and dependencies before jumping into the code.**
-
----
 
 ## Getting Started
 Starter code has been provided for you in the `/lab/starter-code` folder. 
@@ -40,16 +26,27 @@ Create a new repository for this assignment, copy the starter-code folder conten
 ### Deploy the application
 * Create a new repository for your application at Github and connect your sandbox to it.
 * Clone the repo to your local machine
+* Make sure that 'aws.yml' and 'build' are in your .gitignore, and then commit your code back to github
 * Perform an `npm install`
 * Perform an `npm run build`
   * You should now have a fully functional static build in the builds folder
-* Do a manual deployment of the `build` folder contents to a new Bucket and Cloud at AWS
+  * You can verify this by running `live-server` from within the build folder
+* In your README, Submit all 3 deployed URLs from the below steps as well as your Travis tests and documentation links.
+ 
+#### Netlify
 * Setup Netlify to deploy from your master branch
-* Prepare an automated deployment through Cloud Formation
-* Make sure that 'aws.yml' and 'build' are in your .gitignore, and then commit your code back to github
-* Your App should auto-deploy to both Netlify and AWS Cloudfront.
 
-Submit all 3 deployed URLs as well as your Travis tests and documentation links.
+#### AWS S3 Website
+* Run the build script `npm run build` for your application
+* Do a manual deployment of the `build` folder contents to a new Bucket and Cloud at AWS
+* Set the permissions to public
+* Enable Static Website Hosting
+
+#### AWS Elastic Beanstalk
+* Use the `aws-tools` npm package to create an aws.yml file
+* Prepare an automated deployment through Cloud Formation using the `aws.yml` file you've created
+* Your App should auto-deploy to AWS Cloudfront.
+
 
 ### Assignemnt Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations

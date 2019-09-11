@@ -1,13 +1,9 @@
 # LAB - React Native - Milestone 1: MVP
 
+Create your first native phone/device application using React Native, tapping into at least 2 phone features.
+
 ## Before you begin
 Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
-
-**Visualize Your Application**
-
-Evaluate the lab requirements and begin with drawing a **UML** and/or **Data/Process Flow diagram**.  Having a solid visual understanding of the code you have/need and how it connects is critical to properly approaching this assignment.
-
----
 
 ## Getting Started
 

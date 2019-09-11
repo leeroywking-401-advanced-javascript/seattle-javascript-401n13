@@ -5,15 +5,16 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "react": "16.6.3",
-    "react-cookies": "0.1.0",
-    "react-dom": "16.6.3",
-    "react-jsonschema-form": "1.0.6",
-    "react-redux": "5.1.1",
-    "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.1",
+    "node-sass": "^4.12.0",
+    "react": "16.8.6",
+    "react-cookies": "0.1.1",
+    "react-dom": "16.8.6",
+    "react-jsonschema-form": "1.6.1",
+    "react-redux": "7.1.0",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.0.1",
     "redux": "4.0.1",
-    "superagent": "4.0.0"
+    "superagent": "5.0.8"
   },
   "devDependencies": {},
   "scripts": {
@@ -21,5 +22,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

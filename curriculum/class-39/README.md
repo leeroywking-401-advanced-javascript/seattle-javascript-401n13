@@ -1,9 +1,14 @@
-# Remote CRUD
+# Combined Reducers, Drag and Drop
 
 ## Learning Objectives
 
-* Fully interact with a RESTful API from a React Application
-
+* Describe and Define
+  * Multiple Reducers
+  * Duplicative Actions
+* Execute
+  * Splitting a complex reducer into multiples
+  * Implementing drag and drop via state and composition
+  
 ## Outline
 * :05 **Housekeeping/Recap**
 * :30 **Whiteboard/DSA Review**
@@ -14,8 +19,4 @@
 * Break
 * :60 **Main Topic**
 
-## Main Topic:
-* Implement REST actions through Redux
-* Where do we normalize data?
-* How do we handle errors?
-* How do we handle different methods?
+
