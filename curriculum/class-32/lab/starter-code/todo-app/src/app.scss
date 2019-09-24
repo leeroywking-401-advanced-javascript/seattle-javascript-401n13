@@ -1,0 +1,13 @@
+label {
+    background: #eee;
+    display:flex;
+    flex-direction:row;
+    padding:.5em;
+    margin: .5em;
+}
+
+section {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}

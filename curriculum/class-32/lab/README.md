@@ -1,4 +1,4 @@
-# LAB - Custom Hooks: Sockets and Fetch
+# LAB - Custom Hooks and Magical Todos!
 
 For this assignment, you will be refactoring a socket.io based chat application to make use of React Hooks and Context APIs
 
@@ -11,70 +11,29 @@ Refer to *Getting Started*  in the [lab submission instructions](../../../refere
 
 Starter code has been provided for you in the `/lab/starter-code` folder. 
 
-Open [Code Sandbox](http://codesandbox.io) and Create a new application. When prompted, choose "From GitHub" and then paste in the URL to today's starter code folder from your fork of the class repository.
+## Assignment
 
-You will be submitting the URL to this working sandbox as part of your assignment.
+* Setup the react application provided and deploy
+* Connect it to the "official" API and Q servers (linked below)
+  * You'll need a .env file in the root folder of the app
+  * REACT_APP_Q_SERVER
+  * REACT_APP_API
+* Create a complete and verbose UML drawing that shows how the application works
+  * Data Flow (what happens when you add a to do item?)
+  * How do the components connect?
+  * When do the hooks run?
+* Write a complete README that describes the application architecture in words.
+   * Hooks and how we're managing state in the form
+   * The Q/API Connections
+   * Which Components are at play
+   * What happened to the Shopping list?
+     * How would you put it back?
 
+### Stretch Goal (but do it)
+* Resurrect your own API and Q servers from earlier in the course.
+* Deploy those to Heroku
+* Reconnect your React App to use those instead of the official ones.
 
-## Practice creating custom hooks
-Begin with: `starter-code/practice`
-
-In this folder, you'll find 2 sub-folders
-* `server` contains a minimalist server that runs a `socket.io` server on port 3000 and also starts up a version of the `Q` server from block 4. Each listens for different events.  Review this code and note what's being listened for and what's being emitted.
-* `client` contains a React application that
-  * Takes your form input and displays it on screen as you type
-  * When you 'submit' the form
-    * Publishes separate messages to the `Q` server and the `socket.io` server with the form data
-  * Subscribes to those events and renders their 'payload' 
-
-When the server is running, this app should show your form entry 3 times.
-  
-**Refactor this application as follows**
-
-* Create a custom hook called `form` 
-  * This should handle the change for each field, the form submission
-  * Export submit & change handlers and form data
-  * The hook should accept a callback function that it will call (if supplied) on form submit, with the form data
-  * Convert the current form implementation to use your new hook
-  
-* Create a custom hook called `socket`
-  * Connect to the socket.io server on port 3000
-    * Where in the hook do you make this connection?
-  * Export a subscribe method that takes an event and a callback
-    * Runs the callback with the payload when an event fires
-  * Export a publish method that takes an event and some payload
-    * Emits the event and payload to the server for broadcasting
-  * Convert the current socket publish/subscribe implementation to use your new hook
-    
-* Create a custom hook called `q`
-  * Connect to the socket.io server on port 3333
-    * Where in the hook do you make this connection?
-  * Export a subscribe method that takes an event and a callback
-    * Runs the callback with the payload when an event fires
-  * Export a publish method that takes an event and some payload
-    * Emits the event and payload to the server for broadcasting
-  * Convert the current Q publish/subscribe implementation to use your new hook
-
-### Testing
-* Complete basic logic/unit testing on the hooks
-
-## To Do Application Refactor
-
-You've been supplied starter code for the To Do application that can (optionally) connect to a live API server. In this assignment, you'll need to refactor the application in a number of ways:
-
-* Modularize both the todo and todo-connected components.
-  * They will both use the same form, list, details sub-components
-  * Use the `useReducer` hook to manage your displayed lists.
-  * The application should work the same way, with the obvious exception that the 'connected' version is hitting server.
-* Alter the application to use the connected component, as you'll need to use your live server to save real data and fire real events.
-* Convert the form component use the `form` hook you created in the practice assignment
-* Implement the `Q` hook and subscribe to the various **CRUD** events that your deployed API and Q server are wired for.
-* As you save/delete records, anyone using your application (e.g. having multiple tabs open) should see updates in real time.
-
-### Testing
-* Write tests before you start the refactoring process
-* Your tests should continue to work after the refactor
-* You should expand on them after you add in the Q connection.
 
 ### Resources
 
